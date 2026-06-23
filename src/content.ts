@@ -7,8 +7,8 @@ export const content = {
 
   about: {
     heading: "The experience to know\nwhat good looks like.",
-    body1: "Arek Estall has worked in B2B marketing from the inside out — as an in-house Head of Marketing, founder of two agencies, and now as a specialist consultant. That progression means he knows what good looks like at every level, and has worked with businesses including ROCKWOOL, nCino, Bailey Caravans, and Stitch Money.",
-    body2: "He works differently depending on what you need. Where there's a CMO or Head of Marketing already in place, he acts as the bridge between strategy and delivery — senior direction without displacing your existing team. For founders and business owners, he can own the marketing function directly, bring in trusted specialists to execute, build out a team from scratch, or lead a recruitment process when the time is right.",
+    body1: "Arek Estall has been in B2B marketing from every angle — in-house head of marketing, founder of two agencies, and now specialist consultant. That progression means when he walks into a business, he can usually spot what's wrong quickly. Not from a framework or a process, but from having seen the same patterns play out across businesses like ROCKWOOL, nCino, Bailey Caravans, and Stitch Money.",
+    body2: "He brings an entrepreneurial instinct to his work — practical, direct, and focused on what actually moves the needle. Where others might reach for complexity, he keeps things clear. His clients tend to be founders and MDs who've outgrown the agency model and want someone who'll tell them the truth about their marketing and then help them fix it.",
     linkText: "Full profile & experience →",
     sectors: [
       { emoji: "💻", label: "B2B Technology & Software" },

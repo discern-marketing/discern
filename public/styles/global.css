@@ -9,6 +9,16 @@ a { text-decoration: none; color: inherit; }
 .nav-link { font-size: 13px; color: rgba(255,255,255,0.7); cursor: pointer; }
 .nav-link:hover { color: #fff; }
 .nav-cta { font-size: 13px; padding: 9px 20px; border: 0.5px solid rgba(255,255,255,0.4); border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.1); color: #fff; font-family: inherit; }
+.nav.nav-light { background: #fff; border-bottom: 0.5px solid #e8e8e8; }
+.nav.nav-light .nav-logo { color: #1a1a1a; }
+.nav.nav-light .nav-logo .nav-period { color: #0F6E56; }
+.nav.nav-light .nav-link { color: #666; }
+.nav.nav-light .nav-link:hover { color: #1a1a1a; }
+.nav.nav-light .nav-cta { border-color: #ccc; background: #fff; color: #1a1a1a; }
+.page-intro { padding: 72px 48px 0; }
+.page-intro-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #0F6E56; margin-bottom: 16px; }
+.page-intro-h1 { font-family: Georgia, serif; font-size: 48px; font-weight: 500; line-height: 1.08; color: #04342C; margin-bottom: 20px; }
+.page-intro-body { font-size: 15px; color: #555; line-height: 1.75; max-width: 520px; padding-bottom: 72px; }
 
 .hero { position: relative; min-height: 540px; display: flex; align-items: center; background: #0F6E56; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
