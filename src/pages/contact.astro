@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { content } from '../content';
 
-const { footer } = content;
+const { cta, footer } = content;
 ---
 
 <Layout title="Contact — Discern">
@@ -17,28 +17,81 @@ const { footer } = content;
     </div>
   </nav>
 
-  <div class="contact-wrap">
-    <div class="page-intro-label">Contact</div>
-    <h1 class="contact-h1">Let's talk.</h1>
-    <p class="contact-body">The best place to start is a free 30-minute call — no pitch, just a clear view of where your marketing stands. Or reach out directly below.</p>
-
-    <a href="mailto:hello@discern.marketing" class="contact-cta-btn">Book a discovery call</a>
-
-    <div class="contact-methods">
-      <a href="mailto:hello@discern.marketing" class="contact-method">
-        <div class="contact-method-label">Email</div>
-        <div class="contact-method-value">hello@discern.marketing</div>
-      </a>
-      <a href="https://wa.me/447700000000" target="_blank" rel="noopener" class="contact-method">
-        <div class="contact-method-label">WhatsApp</div>
-        <div class="contact-method-value">Message on WhatsApp →</div>
-      </a>
-      <a href="https://www.linkedin.com/in/arekestall" target="_blank" rel="noopener" class="contact-method">
-        <div class="contact-method-label">LinkedIn</div>
-        <div class="contact-method-value">Arek Estall →</div>
-      </a>
+  <div class="contact-intro">
+    <div>
+      <div class="page-intro-label">Contact</div>
+      <h1 class="contact-h1">Let's talk.</h1>
+      <p class="contact-intro-body">The best starting point is a free 30-minute call — no pitch, just a clear view of where your marketing stands. You'll find us in Cardiff, working with clients across the UK.</p>
+    </div>
+    <div class="contact-map">
+      <iframe
+        src="https://maps.google.com/maps?q=Cardiff+City+Centre,+CF10,+Wales&t=m&z=14&output=embed"
+        width="100%"
+        height="100%"
+        title="Discern location — Cardiff, Wales"
+        style="border:0;display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
   </div>
+
+  <div class="contact-panel">
+    <h2 class="contact-panel-h2">Ways to get in touch.</h2>
+    <div class="contact-panel-grid">
+
+      <div class="contact-details">
+        <div class="contact-detail-row">
+          <div class="contact-detail-key">Address</div>
+          <div class="contact-detail-val">Cardiff, Wales · CF10</div>
+        </div>
+        <div class="contact-detail-row">
+          <div class="contact-detail-key">Phone</div>
+          <div class="contact-detail-val">+44 XXXX XXXXXX</div>
+        </div>
+        <div class="contact-detail-row">
+          <div class="contact-detail-key">Email</div>
+          <div class="contact-detail-val">hello@discern.marketing</div>
+        </div>
+      </div>
+
+      <div>
+        <!-- TODO before launch: wire up form action (e.g. Formspree or similar) -->
+        <form class="contact-form">
+          <div class="contact-form-row">
+            <div class="contact-form-group">
+              <label class="contact-form-label" for="cf-name">Name</label>
+              <input type="text" id="cf-name" class="contact-form-input" placeholder="Your name">
+            </div>
+            <div class="contact-form-group">
+              <label class="contact-form-label" for="cf-company">Company</label>
+              <input type="text" id="cf-company" class="contact-form-input" placeholder="Company name">
+            </div>
+          </div>
+          <div class="contact-form-group">
+            <label class="contact-form-label" for="cf-email">Email</label>
+            <input type="email" id="cf-email" class="contact-form-input" placeholder="you@company.com">
+          </div>
+          <div class="contact-form-group">
+            <label class="contact-form-label" for="cf-message">What are you working on?</label>
+            <textarea id="cf-message" class="contact-form-textarea" placeholder="Tell us a bit about your business and what you're looking for help with..."></textarea>
+          </div>
+          <button type="submit" class="contact-form-submit">Send message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="cta">
+    <h2 class="cta-h2">Start with a free<br>marketing review.</h2>
+    <p class="cta-sub">{cta.subheading}</p>
+    <div class="cta-actions">
+      <button class="cta-btn">{cta.buttonText}</button>
+      <a href={`mailto:${cta.email}`} class="cta-link">{cta.email}</a>
+    </div>
+  </section>
 
   <footer class="footer">
     <span class="footer-logo">discern<span style="color:#0F6E56;">.</span></span>
@@ -52,17 +105,155 @@ const { footer } = content;
     </a>
   </footer>
 
+  <section class="press">
+    <p class="press-label">As seen in</p>
+    <div class="press-logos">
+      <div class="press-logo">
+        <svg width="88" height="30" viewBox="0 0 88 30" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="26" height="30" rx="2" fill="#aaa"/>
+          <text x="13" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="white">B</text>
+          <rect x="31" y="0" width="26" height="30" rx="2" fill="#aaa"/>
+          <text x="44" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="white">B</text>
+          <rect x="62" y="0" width="26" height="30" rx="2" fill="#aaa"/>
+          <text x="75" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="white">C</text>
+        </svg>
+      </div>
+      <div class="press-logo">
+        <span style="font-family:Georgia,serif;font-size:20px;color:#bbb;letter-spacing:-0.02em;">The Guardian</span>
+      </div>
+      <div class="press-logo">
+        <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#bbb;letter-spacing:-0.01em;">b2bmarketing.net</span>
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
-  .contact-wrap { padding: 72px 48px; max-width: 600px; }
-  .contact-h1 { font-family: Georgia, serif; font-size: 52px; font-weight: 500; color: #04342C; line-height: 1.08; margin-bottom: 20px; }
-  .contact-body { font-size: 16px; color: #555; line-height: 1.75; margin-bottom: 40px; max-width: 480px; }
-  .contact-cta-btn { display: inline-block; padding: 14px 32px; background: #9FE1CB; color: #04342C; font-size: 14px; font-weight: 500; border-radius: 8px; margin-bottom: 64px; font-family: 'DM Sans', sans-serif; }
-  .contact-methods { display: flex; flex-direction: column; gap: 0; border-top: 0.5px solid #e8e8e8; }
-  .contact-method { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 0.5px solid #e8e8e8; color: inherit; }
-  .contact-method:hover .contact-method-value { color: #0F6E56; }
-  .contact-method-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; }
-  .contact-method-value { font-size: 15px; color: #1a1a1a; transition: color 0.2s; }
-</style>
+  .contact-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 56px 48px 48px;
+    border-bottom: 0.5px solid #eee;
+    align-items: start;
+  }
+  .contact-h1 {
+    font-family: Georgia, serif;
+    font-size: 52px;
+    font-weight: 500;
+    color: #04342C;
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+  .contact-intro-body {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.75;
+  }
+  .contact-map {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 280px;
+  }
 
+  .contact-panel {
+    background: #E1F5EE;
+    padding: 56px 48px;
+  }
+  .contact-panel-h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #04342C;
+    margin-bottom: 40px;
+  }
+  .contact-panel-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contact-detail-row {
+    padding: 16px 0;
+    border-bottom: 0.5px solid rgba(15,110,86,0.2);
+  }
+  .contact-detail-row:first-child {
+    border-top: 0.5px solid rgba(15,110,86,0.2);
+  }
+  .contact-detail-key {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0F6E56;
+    margin-bottom: 4px;
+  }
+  .contact-detail-val {
+    font-size: 15px;
+    color: #04342C;
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .contact-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #0F6E56;
+    margin-bottom: 6px;
+  }
+  .contact-form-input {
+    padding: 11px 14px;
+    border: 0.5px solid rgba(15,110,86,0.3);
+    border-radius: 6px;
+    font-size: 14px;
+    color: #04342C;
+    background: #fff;
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+  }
+  .contact-form-input::placeholder { color: #aaa; }
+  .contact-form-input:focus { outline: none; border-color: #0F6E56; }
+  .contact-form-textarea {
+    padding: 11px 14px;
+    border: 0.5px solid rgba(15,110,86,0.3);
+    border-radius: 6px;
+    font-size: 14px;
+    color: #04342C;
+    background: #fff;
+    font-family: 'DM Sans', sans-serif;
+    height: 130px;
+    resize: vertical;
+    width: 100%;
+  }
+  .contact-form-textarea::placeholder { color: #aaa; }
+  .contact-form-textarea:focus { outline: none; border-color: #0F6E56; }
+  .contact-form-submit {
+    background: #0F6E56;
+    color: #E1F5EE;
+    padding: 13px 28px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    align-self: flex-start;
+    transition: background 0.2s;
+  }
+  .contact-form-submit:hover { background: #04342C; }
+</style>
