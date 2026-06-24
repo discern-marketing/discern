@@ -10,7 +10,7 @@ const about = { ...fallback.about, ...(cms?.about || {}) };
 const quoteStrip = { ...fallback.quoteStrip, ...(cms?.quoteStrip || {}) };
 const painPoints = { ...fallback.painPoints, cards: cms?.painPoints?.cards || fallback.painPoints.cards };
 const results = { ...fallback.results, cards: cms?.results?.cards || fallback.results.cards };
-const services = { ...fallback.services, cards: cms?.services?.cards || fallback.services.cards };
+const services = fallback.services;
 const cta = { ...fallback.cta, ...(cms?.cta || {}) };
 const footer = { ...fallback.footer, ...(cms?.footer || {}) };
 ---
