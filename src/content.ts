@@ -1,19 +1,19 @@
 export const content = {
   hero: {
     headline: "Your marketing\nis running. It's just\nnot working.",
-    subheadline: "Wrong channels, inconsistent messaging, copy that doesn't reflect your ICP — we fix the strategy so your pipeline fills with the right enquiries.",
+    subheadline: "Poor digital experience, wrong channels, messaging that doesn't convert — we fix your digital strategy so your pipeline fills with the right leads.",
     cta: "Book a discovery call",
   },
 
   about: {
     heading: "The experience to know\nwhat good looks like.",
-    body1: "Arek Estall has been in B2B marketing from every angle — in-house head of marketing, founder of two agencies, and now specialist consultant. That progression means when he walks into a business, he can usually spot what's wrong quickly. Not from a framework or a process, but from having seen the same patterns play out across businesses like ROCKWOOL, nCino, Bailey Caravans, and Stitch Money.",
-    body2: "He brings an entrepreneurial instinct to his work — practical, direct, and focused on what actually moves the needle. Where others might reach for complexity, he keeps things clear. His clients tend to be founders and MDs who've outgrown the agency model and want someone who'll tell them the truth about their marketing and then help them fix it.",
+    body1: "Arek Estall has spent his career at the intersection of digital strategy and B2B growth — in-house, agency-side, and now as a specialist consultant. His focus is digital: how websites convert, whether channels reach the right buyers, and whether the messaging reflects what the business actually does. That pattern recognition comes from having worked across businesses like ROCKWOOL, nCino, SharpCloud, and Stitch Money.",
+    body2: "His approach is strategic, not operational — he defines what good looks like and builds the plan to get there, rather than becoming another pair of hands. That's particularly valuable for founders and MDs who need a clear digital diagnosis, not more activity.",
     linkText: "Full profile & experience →",
     sectors: [
-      { emoji: "💻", label: "B2B Technology & Software" },
-      { emoji: "🤝", label: "Professional Services" },
+      { emoji: "💻", label: "B2B Technology & SaaS" },
       { emoji: "💳", label: "Fintech & Financial Services" },
+      { emoji: "🌐", label: "Digital-first B2B businesses" },
     ],
   },
 
@@ -105,8 +105,8 @@ export const content = {
       {
         badge: "Most popular",
         featured: true,
-        name: "Fractional CMO\nRetainer",
-        description: "Senior marketing leadership on a monthly retainer. Strategy set, team directed, outcomes owned.",
+        name: "Fractional\nDigital CMO",
+        description: "Senior digital marketing leadership on a monthly retainer. Strategy defined, team directed, outcomes owned.",
         includesLabel: "Includes",
         features: [
           "Strategy & prioritisation",
@@ -131,8 +131,8 @@ export const content = {
       {
         badge: "Fixed scope",
         featured: false,
-        name: "Channel Strategy\nReview",
-        description: "Audit of your channel mix, budget, and performance. A clear, prioritised plan for where to focus and what to cut.",
+        name: "Digital Channel\nReview",
+        description: "Audit of your digital channel mix, spend, and performance. A clear, prioritised plan for where to focus — and what to cut.",
         includesLabel: "Deliverables",
         features: [
           "Channel performance audit",
@@ -152,7 +152,7 @@ export const content = {
   },
 
   footer: {
-    tagline: "Marketing Strategy | Digital Strategy | Fractional CMO",
+    tagline: "Digital Marketing Strategy | Digital Experience & UX | Fractional Digital CMO",
     email: "hello@discern.marketing",
     whatsapp: "https://wa.me/447700000000",
     linkedin: "https://www.linkedin.com/in/arekestall",
