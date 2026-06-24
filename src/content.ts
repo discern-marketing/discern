@@ -1,7 +1,7 @@
 export const content = {
   hero: {
     headline: "Your marketing\nis running. It's just\nnot working.",
-    subheadline: "Wrong channels, confused messaging, copy that doesn't reflect your ICP — we fix the strategy so your pipeline fills with the right enquiries.",
+    subheadline: "Wrong channels, inconsistent messaging, copy that doesn't reflect your ICP — we fix the strategy so your pipeline fills with the right enquiries.",
     cta: "Book a discovery call",
   },
 
