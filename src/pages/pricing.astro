@@ -32,10 +32,8 @@ const { services, cta, footer } = content;
         <div class={`service-card${card.featured ? ' featured' : ''}`}>
           <span class="service-badge">{card.badge}</span>
           <div class="service-name" set:html={card.name.replace('\n', '<br>')}></div>
-          {card.featured
-            ? <><div class="service-price">From £2,500</div><div class="service-price-note">per month</div></>
-            : <><div class="service-price">£5,500</div><div class="service-price-note">fixed fee</div></>
-          }
+          <div class="service-price">{card.price}</div>
+          <div class="service-price-note">{card.priceNote}</div>
           <p class="service-desc">{card.description}</p>
           <div class="service-includes">
             <div class="service-includes-label">{card.includesLabel}</div>
