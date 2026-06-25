@@ -26,6 +26,7 @@ const { results, cta, footer } = content;
     {results.cards.map(card => (
       <div class="case">
         <img class="case-img" src={card.imageUrl} alt={card.name}>
+        <div class="case-inner">
         <div class="case-header">
           <div class="case-meta">
             {card.logoUrl
@@ -79,6 +80,7 @@ const { results, cta, footer } = content;
             )}
           </div>
         </div>
+        </div>
       </div>
     ))}
   </div>
@@ -130,22 +132,25 @@ const { results, cta, footer } = content;
 
 <style>
   .cases {
-    padding: 0 48px;
+    background: #E1F5EE;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
   .case {
-    padding: 56px 0;
-    border-bottom: 0.5px solid #eee;
-  }
-  .case:last-child {
-    border-bottom: none;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
   }
   .case-img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 28px;
     display: block;
+  }
+  .case-inner {
+    padding: 32px 40px 40px;
   }
   .case-header {
     display: flex;
