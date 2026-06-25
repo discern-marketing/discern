@@ -23,10 +23,10 @@ const { results, cta, footer } = content;
   </div>
 
   <div class="cases">
-    {results.cards.map(card => (
-      <div class="case">
-        <img class="case-img" src={card.imageUrl} alt={card.name}>
+    {results.cards.map((card, i) => (
+      <div class={`case${i % 2 !== 0 ? ' case-alt' : ''}`}>
         <div class="case-inner">
+        <img class="case-img" src={card.imageUrl} alt={card.name}>
         <div class="case-header">
           <div class="case-meta">
             {card.logoUrl
@@ -132,25 +132,25 @@ const { results, cta, footer } = content;
 
 <style>
   .cases {
-    background: #E1F5EE;
-    padding: 48px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    /* no background — each case sets its own */
   }
   .case {
     background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
+    padding: 56px 48px;
+  }
+  .case-alt {
+    background: #E1F5EE;
   }
   .case-img {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    border-radius: 8px;
     display: block;
+    margin-bottom: 28px;
   }
   .case-inner {
-    padding: 32px 40px 40px;
+    /* wrapper only — styling handled by .case */
   }
   .case-header {
     display: flex;
