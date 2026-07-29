@@ -6,7 +6,7 @@ import { getHomePage } from '../lib/sanity';
 const cms = await getHomePage();
 
 const hero = { ...fallback.hero, ...(cms?.hero || {}) };
-const about = { ...fallback.about, ...(cms?.about || {}) };
+const about = fallback.about;
 const quoteStrip = { ...fallback.quoteStrip, ...(cms?.quoteStrip || {}) };
 const painPoints = { ...fallback.painPoints, cards: cms?.painPoints?.cards || fallback.painPoints.cards };
 const results = { ...fallback.results, cards: cms?.results?.cards || fallback.results.cards };
