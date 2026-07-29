@@ -34,7 +34,7 @@ const footer = { ...fallback.footer, ...(cms?.footer || {}) };
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-h1">Your marketing<br>is running. It's just<br>not working.</div>
+      <div class="hero-h1">{hero.headline}</div>
       <div class="hero-sub">{hero.subheadline}</div>
       <button class="hero-cta">{hero.cta}</button>
     </div>
@@ -77,7 +77,7 @@ const footer = { ...fallback.footer, ...(cms?.footer || {}) };
 
   <!-- PAIN POINTS -->
   <section class="pain">
-    <h2 class="pain-headline">Here's where<br>we excel.</h2>
+    <h2 class="pain-headline">Here's where<br>I can help.</h2>
     <div class="pain-grid">
       {painPoints.cards.map(card => (
         <div class="pain-card">
@@ -131,14 +131,19 @@ const footer = { ...fallback.footer, ...(cms?.footer || {}) };
           <span class="service-badge">{card.badge}</span>
           <div class="service-name" set:html={card.name.replace('\n', '<br>')}></div>
           <p class="service-desc">{card.description}</p>
-          <div class="service-includes">
-            <div class="service-includes-label">{card.includesLabel}</div>
-            {card.features.map(f => (
-              <div class="service-feature">
-                <div class="service-feature-dot"></div>{f}
-              </div>
-            ))}
-          </div>
+          {card.features && card.features.length > 0 && (
+            <div class="service-includes">
+              <div class="service-includes-label">{card.includesLabel}</div>
+              {card.features.map(f => (
+                <div class="service-feature">
+                  <div class="service-feature-dot"></div>{f}
+                </div>
+              ))}
+            </div>
+          )}
+          {card.cta && (
+            <a href={card.ctaLink} class="service-cta-link">{card.cta}</a>
+          )}
         </div>
       ))}
     </div>
@@ -146,7 +151,7 @@ const footer = { ...fallback.footer, ...(cms?.footer || {}) };
 
   <!-- CTA -->
   <section class="cta">
-    <h2 class="cta-h2">Start with a free<br>marketing review.</h2>
+    <h2 class="cta-h2">Apply for a no-obligation<br>website review.</h2>
     <p class="cta-sub">{cta.subheading}</p>
     <div class="cta-actions">
       <button class="cta-btn">{cta.buttonText}</button>
