@@ -5,14 +5,14 @@ import { getHomePage } from '../lib/sanity';
 
 const cms = await getHomePage();
 
-const hero = { ...fallback.hero, ...(cms?.hero || {}) };
+const hero = fallback.hero;
 const about = fallback.about;
-const quoteStrip = { ...fallback.quoteStrip, ...(cms?.quoteStrip || {}) };
-const painPoints = { ...fallback.painPoints, cards: cms?.painPoints?.cards || fallback.painPoints.cards };
-const results = { ...fallback.results, cards: cms?.results?.cards || fallback.results.cards };
+const quoteStrip = fallback.quoteStrip;
+const painPoints = fallback.painPoints;
+const results = fallback.results;
 const services = fallback.services;
-const cta = { ...fallback.cta, ...(cms?.cta || {}) };
-const footer = { ...fallback.footer, ...(cms?.footer || {}) };
+const cta = fallback.cta;
+const footer = fallback.footer;
 ---
 
 <Layout>
