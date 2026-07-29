@@ -2,95 +2,77 @@
 import Layout from '../layouts/Layout.astro';
 import { content } from '../content';
 
-const { cta, footer } = content;
+const { footer } = content;
 ---
 
-<Layout title="Contact — Discern">
+<Layout title="Apply for a No-Obligation Website Review — Discern">
 
   <nav class="nav nav-light">
     <a href="/" class="nav-logo">discern<span class="nav-period">.</span></a>
     <div class="nav-links">
-<a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
       <a href="/results" class="nav-link">Results</a>
-      <a href="/contact" class="nav-link">Contact</a>
+      <a href="/contact" class="nav-cta">Contact</a>
     </div>
   </nav>
 
-  <div class="contact-intro">
-    <div>
-      <div class="page-intro-label">Contact</div>
-      <h1 class="contact-h1">Let's talk.</h1>
-      <p class="contact-intro-body">The best starting point is a no-obligation website review — I'll spend an hour looking at your site, then we'll get on a call to talk through what I find. You'll find me in Wales, working with clients across the UK.</p>
-    </div>
-    <div class="contact-map">
-      <iframe
-        src="https://maps.google.com/maps?q=Cardiff+City+Centre,+CF10,+Wales&t=m&z=14&output=embed"
-        width="100%"
-        height="100%"
-        title="Discern location — Cardiff, Wales"
-        style="border:0;display:block;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+  <div class="review-intro">
+    <div class="page-intro-label">No-obligation website review</div>
+    <h1 class="review-h1">Get a fresh pair of eyes<br>on your website.</h1>
+    <p class="review-body">I'll spend an hour reviewing your website — looking at structure, UX, messaging, and how it's performing in search — and then we'll get on a 30-minute call to talk through what I find.</p>
+    <p class="review-body">No slides. No report. Just an honest conversation about what's working, what isn't, and where I'd focus first.</p>
+    <p class="review-body">I take on a limited number of reviews each month, so I ask everyone to apply rather than just book in.</p>
+  </div>
+
+  <div class="what-you-get">
+    <h2 class="wyg-h">What you get.</h2>
+    <div class="wyg-grid">
+      <div class="wyg-item">
+        <div class="wyg-num">1hr</div>
+        <div class="wyg-label">Me reviewing your website before we speak</div>
+      </div>
+      <div class="wyg-item">
+        <div class="wyg-num">30min</div>
+        <div class="wyg-label">Call to talk through findings and quick wins</div>
+      </div>
+      <div class="wyg-item">
+        <div class="wyg-num">No cost</div>
+        <div class="wyg-label">No obligation to work together after</div>
+      </div>
     </div>
   </div>
 
-  <div class="contact-panel">
-    <h2 class="contact-panel-h2">Ways to get in touch.</h2>
-    <div class="contact-panel-grid">
-
-      <div class="contact-details">
-        <div class="contact-detail-row">
-          <div class="contact-detail-key">Address</div>
-          <div class="contact-detail-val">Cardiff, Wales · CF10</div>
+  <div class="form-section">
+    <h2 class="form-h">Tell me a bit about you.</h2>
+    <p class="form-sub">I'll review your application and be in touch within a couple of days.</p>
+    <!-- TODO before launch: wire up form action (e.g. Formspree or similar) -->
+    <form class="apply-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="ar-name">Your name</label>
+          <input type="text" id="ar-name" class="form-input" placeholder="Jane Smith">
         </div>
-        <div class="contact-detail-row">
-          <div class="contact-detail-key">Phone</div>
-          <div class="contact-detail-val">+44 XXXX XXXXXX</div>
-        </div>
-        <div class="contact-detail-row">
-          <div class="contact-detail-key">Email</div>
-          <div class="contact-detail-val">hello@discern.marketing</div>
+        <div class="form-group">
+          <label class="form-label" for="ar-company">Company</label>
+          <input type="text" id="ar-company" class="form-input" placeholder="Acme Ltd">
         </div>
       </div>
-
-      <div>
-        <!-- TODO before launch: wire up form action (e.g. Formspree or similar) -->
-        <form class="contact-form">
-          <div class="contact-form-row">
-            <div class="contact-form-group">
-              <label class="contact-form-label" for="cf-name">Name</label>
-              <input type="text" id="cf-name" class="contact-form-input" placeholder="Your name">
-            </div>
-            <div class="contact-form-group">
-              <label class="contact-form-label" for="cf-company">Company</label>
-              <input type="text" id="cf-company" class="contact-form-input" placeholder="Company name">
-            </div>
-          </div>
-          <div class="contact-form-group">
-            <label class="contact-form-label" for="cf-email">Email</label>
-            <input type="email" id="cf-email" class="contact-form-input" placeholder="you@company.com">
-          </div>
-          <div class="contact-form-group">
-            <label class="contact-form-label" for="cf-message">What are you working on?</label>
-            <textarea id="cf-message" class="contact-form-textarea" placeholder="Tell us a bit about your business and what you're looking for help with..."></textarea>
-          </div>
-          <button type="submit" class="contact-form-submit">Send message</button>
-        </form>
+      <div class="form-group">
+        <label class="form-label" for="ar-url">Website URL</label>
+        <input type="url" id="ar-url" class="form-input" placeholder="https://yoursite.com">
       </div>
-
-    </div>
+      <div class="form-group">
+        <label class="form-label" for="ar-challenge">What's your main challenge right now?</label>
+        <textarea id="ar-challenge" class="form-textarea" placeholder="Tell me a bit about what's not working — leads, rankings, conversions, or something else..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Submit your application</button>
+    </form>
   </div>
 
-  <section class="cta">
-    <h2 class="cta-h2">Apply for a no-obligation<br>website review.</h2>
-    <p class="cta-sub">{cta.subheading}</p>
-    <div class="cta-actions">
-      <button class="cta-btn">{cta.buttonText}</button>
-      <a href={`mailto:${cta.email}`} class="cta-link">{cta.email}</a>
-    </div>
-  </section>
+  <div class="what-next">
+    <div class="what-next-label">What happens next</div>
+    <p class="what-next-body">Once you've applied, I'll get back to you in the next day or so to make arrangements.</p>
+  </div>
 
   <footer class="footer">
     <span class="footer-logo">discern<span style="color:#0F6E56;">.</span></span>
@@ -129,95 +111,101 @@ const { cta, footer } = content;
 </Layout>
 
 <style>
-  .contact-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
+  .review-intro {
     padding: 56px 48px 48px;
+    max-width: 720px;
     border-bottom: 0.5px solid #eee;
-    align-items: start;
   }
-  .contact-h1 {
+  .review-h1 {
     font-family: Georgia, serif;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 500;
     color: #04342C;
     line-height: 1.08;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
-  .contact-intro-body {
+  .review-body {
     font-size: 16px;
     color: #555;
     line-height: 1.75;
+    margin-bottom: 12px;
   }
-  .contact-map {
-    border-radius: 8px;
-    overflow: hidden;
-    height: 280px;
+  .review-body:last-child {
+    margin-bottom: 0;
   }
 
-  .contact-panel {
+  .what-you-get {
     background: #E1F5EE;
-    padding: 56px 48px;
+    padding: 48px;
   }
-  .contact-panel-h2 {
+  .wyg-h {
     font-family: Georgia, serif;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 500;
     color: #04342C;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
-  .contact-panel-grid {
+  .wyg-grid {
     display: grid;
-    grid-template-columns: 5fr 7fr;
-    gap: 64px;
-    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
-
-  .contact-detail-row {
-    padding: 16px 0;
-    border-bottom: 0.5px solid rgba(15,110,86,0.2);
-  }
-  .contact-detail-row:first-child {
-    border-top: 0.5px solid rgba(15,110,86,0.2);
-  }
-  .contact-detail-key {
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+  .wyg-num {
+    font-family: Georgia, serif;
+    font-size: 32px;
     color: #0F6E56;
-    margin-bottom: 4px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 8px;
   }
-  .contact-detail-val {
-    font-size: 15px;
+  .wyg-label {
+    font-size: 13px;
     color: #04342C;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
-  .contact-form {
+  .form-section {
+    padding: 56px 48px;
+    border-bottom: 0.5px solid #eee;
+  }
+  .form-h {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #04342C;
+    margin-bottom: 8px;
+  }
+  .form-sub {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .apply-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
+    max-width: 600px;
   }
-  .contact-form-row {
+  .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 18px;
   }
-  .contact-form-group {
+  .form-group {
     display: flex;
     flex-direction: column;
   }
-  .contact-form-label {
+  .form-label {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #0F6E56;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
   }
-  .contact-form-input {
+  .form-input {
     padding: 11px 14px;
-    border: 0.5px solid rgba(15,110,86,0.3);
+    border: 0.5px solid #ddd;
     border-radius: 6px;
     font-size: 14px;
     color: #04342C;
@@ -225,23 +213,23 @@ const { cta, footer } = content;
     font-family: 'DM Sans', sans-serif;
     width: 100%;
   }
-  .contact-form-input::placeholder { color: #aaa; }
-  .contact-form-input:focus { outline: none; border-color: #0F6E56; }
-  .contact-form-textarea {
+  .form-input::placeholder { color: #bbb; }
+  .form-input:focus { outline: none; border-color: #0F6E56; }
+  .form-textarea {
     padding: 11px 14px;
-    border: 0.5px solid rgba(15,110,86,0.3);
+    border: 0.5px solid #ddd;
     border-radius: 6px;
     font-size: 14px;
     color: #04342C;
     background: #fff;
     font-family: 'DM Sans', sans-serif;
-    height: 130px;
+    height: 120px;
     resize: vertical;
     width: 100%;
   }
-  .contact-form-textarea::placeholder { color: #aaa; }
-  .contact-form-textarea:focus { outline: none; border-color: #0F6E56; }
-  .contact-form-submit {
+  .form-textarea::placeholder { color: #bbb; }
+  .form-textarea:focus { outline: none; border-color: #0F6E56; }
+  .form-submit {
     background: #0F6E56;
     color: #E1F5EE;
     padding: 13px 28px;
@@ -254,5 +242,22 @@ const { cta, footer } = content;
     align-self: flex-start;
     transition: background 0.2s;
   }
-  .contact-form-submit:hover { background: #04342C; }
+  .form-submit:hover { background: #04342C; }
+
+  .what-next {
+    padding: 40px 48px;
+  }
+  .what-next-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #0F6E56;
+    margin-bottom: 8px;
+  }
+  .what-next-body {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    max-width: 520px;
+  }
 </style>
