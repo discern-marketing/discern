@@ -310,9 +310,13 @@ const footer = fallback.footer;
 
   /* What I do */
   .what-i-do {
-    background: #fff;
+    background: #E1F5EE;
     padding: 72px 48px;
-    border-bottom: 0.5px solid #e8e8e8;
+    border-bottom: 0.5px solid rgba(15,110,86,0.12);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
   }
   .wid-h2 {
     font-family: Georgia, serif;
@@ -320,12 +324,13 @@ const footer = fallback.footer;
     font-weight: 500;
     color: #04342C;
     line-height: 1.25;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+    position: sticky;
+    top: 88px;
   }
   .wid-bullets {
     display: flex;
     flex-direction: column;
-    max-width: 560px;
   }
   .wid-bullet {
     display: flex;
