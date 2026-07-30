@@ -3,15 +3,15 @@ body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; co
 a { text-decoration: none; color: inherit; }
 
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 48px; position: sticky; top: 0; background: #0F6E56; z-index: 10; }
-.nav-logo { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 400; letter-spacing: -0.01em; color: #fff; }
-.nav-logo .nav-period { color: #9FE1CB; }
+.nav-logo { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.05em; color: #fff; display: inline-flex; align-items: center; gap: 1px; }
+.nav-plus { font-family: Georgia, serif; font-style: italic; font-weight: 400; font-size: 11px; color: #9FE1CB; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-link { font-size: 13px; color: rgba(255,255,255,0.7); cursor: pointer; }
 .nav-link:hover { color: #fff; }
 .nav-cta { font-size: 13px; padding: 9px 20px; border: 0.5px solid rgba(255,255,255,0.4); border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.1); color: #fff; font-family: inherit; }
 .nav.nav-light { background: #fff; border-bottom: 0.5px solid #e8e8e8; }
-.nav.nav-light .nav-logo { color: #1a1a1a; }
-.nav.nav-light .nav-logo .nav-period { color: #0F6E56; }
+.nav.nav-light .nav-logo { color: #111; }
+.nav.nav-light .nav-plus { color: #0F6E56; }
 .nav.nav-light .nav-link { color: #666; }
 .nav.nav-light .nav-link:hover { color: #1a1a1a; }
 .nav.nav-light .nav-cta { border-color: #ccc; background: #fff; color: #1a1a1a; }
@@ -121,7 +121,8 @@ a { text-decoration: none; color: inherit; }
 .press-logo:not(:last-child) { border-right: 0.5px solid #e0e0e0; }
 
 .footer { padding: 24px 48px; border-top: 0.5px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; }
-.footer-logo { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 400; letter-spacing: -0.01em; }
+.footer-logo { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: -0.05em; display: inline-flex; align-items: center; gap: 1px; }
+.footer-plus { font-family: Georgia, serif; font-style: italic; font-weight: 400; font-size: 8px; color: #0F6E56; }
 .footer-text { font-size: 12px; color: #888; }
 
 @media (max-width: 768px) {
