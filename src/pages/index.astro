@@ -28,15 +28,43 @@ const footer = fallback.footer;
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero hero-liberty">
     <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=80" alt="Gower Peninsula, Wales">
     </div>
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-h1">{hero.headline}</div>
-      <div class="hero-sub">{hero.subheadline}</div>
-      <button class="hero-cta">{hero.cta}</button>
+    <div class="hero-content hero-content-centered">
+      <div class="hero-box">
+        <div class="hero-h1">{hero.headline}</div>
+        <div class="hero-sub">{hero.subheadline}</div>
+        <a href="/apply-for-website-review" class="hero-cta">{hero.cta}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT STRIP -->
+  <div class="client-strip">
+    <span class="cs-label">Worked with</span>
+    <div class="cs-divider"></div>
+    <div class="cs-names">
+      <span class="cs-name">Fujitsu</span>
+      <span class="cs-name">ROCKWOOL</span>
+      <span class="cs-name">CBI</span>
+      <span class="cs-name">Wales Millennium Centre</span>
+      <span class="cs-name">Bailey Caravans</span>
+      <span class="cs-name">SharpCloud</span>
+      <span class="cs-name">Stitch Money</span>
+      <span class="cs-name">nCino</span>
+    </div>
+  </div>
+
+  <!-- WHAT I DO -->
+  <section class="what-i-do">
+    <h2 class="wid-h2">Achieve business growth outcomes<br>through digital specialism.</h2>
+    <div class="wid-bullets">
+      <div class="wid-bullet"><div class="wid-dot"></div><span>Website performance. SEO &amp; AI visibility. PPC.</span></div>
+      <div class="wid-bullet"><div class="wid-dot"></div><span>More of the right enquiries. Better conversion. Revenue growth.</span></div>
+      <div class="wid-bullet"><div class="wid-dot"></div><span>Strategy-led, not tactic-led. Brand alignment guaranteed.</span></div>
     </div>
   </section>
 
@@ -195,3 +223,139 @@ const footer = fallback.footer;
   </section>
 
 </Layout>
+
+<style>
+  /* Liberty-style hero overrides */
+  .hero.hero-liberty { min-height: 580px; }
+  .hero.hero-liberty .hero-bg img { filter: none; opacity: 1; }
+  .hero.hero-liberty .hero-overlay {
+    background: rgba(4, 52, 44, 0.52);
+  }
+  .hero-content-centered {
+    max-width: 100%;
+    padding: 80px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-box {
+    background: rgba(4, 52, 44, 0.68);
+    backdrop-filter: blur(6px);
+    border: 0.5px solid rgba(159, 225, 203, 0.2);
+    border-radius: 12px;
+    padding: 48px 56px;
+    max-width: 620px;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-box .hero-h1 {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+  .hero-box .hero-sub {
+    max-width: 100%;
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  .hero-box .hero-cta {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #9FE1CB;
+    color: #04342C;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .hero-box .hero-cta:hover { background: #b5e9d8; }
+
+  /* Client strip */
+  .client-strip {
+    background: #0F6E56;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cs-label {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cs-divider {
+    width: 0.5px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+  }
+  .cs-names {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .cs-name {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* What I do */
+  .what-i-do {
+    background: #fff;
+    padding: 72px 48px;
+    border-bottom: 0.5px solid #e8e8e8;
+  }
+  .wid-h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #04342C;
+    line-height: 1.25;
+    margin-bottom: 40px;
+  }
+  .wid-bullets {
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+  }
+  .wid-bullet {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 0.5px solid #eee;
+  }
+  .wid-bullet:first-child { border-top: 0.5px solid #eee; }
+  .wid-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #0F6E56;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .wid-bullet span {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    color: #04342C;
+    line-height: 1.6;
+  }
+
+  .service-cta-link {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #0F6E56;
+    border-bottom: 0.5px solid #0F6E56;
+    padding-bottom: 2px;
+  }
+</style>
