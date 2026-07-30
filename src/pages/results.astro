@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageBanner from '../components/PageBanner.astro';
 import { content } from '../content';
 
 const { results, cta, footer } = content;
@@ -16,11 +17,12 @@ const { results, cta, footer } = content;
     </div>
   </nav>
 
-  <div class="page-intro">
-    <div class="page-intro-label">Results</div>
-    <h1 class="page-intro-h1">What we've delivered.</h1>
-    <p class="page-intro-body">A track record built on real businesses, honest briefs, and outcomes we stand behind. Every engagement starts with a diagnosis — here's what happened next.</p>
-  </div>
+  <PageBanner
+    label="Results"
+    title="Some clients I've<br>worked with."
+    image="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80"
+    imageAlt="Welsh coastal landscape"
+  />
 
   <div class="cases">
     {results.cards.map((card, i) => (

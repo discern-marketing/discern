@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageBanner from '../components/PageBanner.astro';
 import { content } from '../content';
 
 const { footer } = content;
@@ -16,9 +17,14 @@ const { footer } = content;
     </div>
   </nav>
 
+  <PageBanner
+    label="No-obligation website review"
+    title="Get a fresh pair of eyes<br>on your website."
+    image="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=1600&q=80"
+    imageAlt="Welsh valley and water"
+  />
+
   <div class="review-intro">
-    <div class="page-intro-label">No-obligation website review</div>
-    <h1 class="review-h1">Get a fresh pair of eyes<br>on your website.</h1>
     <p class="review-body">I'll spend an hour reviewing your website — looking at structure, UX, messaging, and how it's performing in search — and then we'll get on a 30-minute call to talk through what I find.</p>
     <p class="review-body">No slides. No report. Just an honest conversation about what's working, what isn't, and where I'd focus first.</p>
     <p class="review-body">I take on a limited number of reviews each month, so I ask everyone to apply rather than just book in.</p>

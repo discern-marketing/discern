@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageBanner from '../components/PageBanner.astro';
 import { content } from '../content';
 
 const { cta, footer } = content;
@@ -16,10 +17,15 @@ const { cta, footer } = content;
     </div>
   </nav>
 
+  <PageBanner
+    label="Contact"
+    title="Let's talk."
+    image="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&q=80"
+    imageAlt="Welsh forest"
+  />
+
   <div class="contact-intro">
     <div>
-      <div class="page-intro-label">Contact</div>
-      <h1 class="contact-h1">Let's talk.</h1>
       <p class="contact-intro-body">The best starting point is a no-obligation website review — I'll spend an hour looking at your site, then we'll get on a call to talk through what I find. You'll find me in Wales, working with clients across the UK.</p>
     </div>
     <div class="contact-map">

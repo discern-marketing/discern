@@ -1,0 +1,85 @@
+---
+export interface Props {
+  label: string;
+  title: string;
+  image: string;
+  imageAlt?: string;
+}
+const { label, title, image, imageAlt = '' } = Astro.props;
+---
+
+<section class="page-banner">
+  <div class="page-banner-bg">
+    <img src={image} alt={imageAlt}>
+  </div>
+  <div class="page-banner-overlay"></div>
+  <div class="page-banner-content">
+    <div class="page-banner-box">
+      <span class="page-banner-label">{label}</span>
+      <h1 class="page-banner-h1" set:html={title}></h1>
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-banner {
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .page-banner-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .page-banner-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 52, 44, 0.58);
+    z-index: 1;
+  }
+  .page-banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 48px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .page-banner-box {
+    background: rgba(4, 52, 44, 0.6);
+    backdrop-filter: blur(6px);
+    border: 0.5px solid rgba(159, 225, 203, 0.2);
+    border-radius: 10px;
+    padding: 32px 48px;
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+  }
+  .page-banner-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FE1CB;
+    margin-bottom: 12px;
+  }
+  .page-banner-h1 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+  }
+</style>

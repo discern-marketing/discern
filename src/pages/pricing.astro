@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageBanner from '../components/PageBanner.astro';
 import { content } from '../content';
 
 const { services, cta, footer } = content;
@@ -10,18 +11,84 @@ const { services, cta, footer } = content;
   <nav class="nav nav-light">
     <a href="/" class="nav-logo">discern<span class="nav-period">.</span></a>
     <div class="nav-links">
-<a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
       <a href="/results" class="nav-link">Results</a>
       <a href="/contact" class="nav-cta">Contact</a>
     </div>
   </nav>
 
-  <div class="page-intro">
-    <div class="page-intro-label">Pricing</div>
-    <h1 class="page-intro-h1">How I work<br>with clients.</h1>
-    <p class="page-intro-body">I offer two fixed-fee audits — one for your website, one for your search and AI visibility — and an ongoing option for clients who want a more sustained working relationship. Both audits come back with a clear written findings document and practical recommendations you can act on straight away.</p>
+  <PageBanner
+    label="Pricing"
+    title="How I work<br>with clients."
+    image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
+    imageAlt="Welsh hillside landscape"
+  />
+
+  <div class="pricing-intro">
+    <p class="pi-body">My preference is to work with clients on an ongoing basis — building the picture, implementing improvements, and tracking what changes. The results compound when the work is sustained, and that's where the real value is.</p>
+    <p class="pi-body">If you're not sure whether that's the right fit, or you want to know where things stand before committing to anything, a one-off audit is a sensible place to start. Both audits come back with a written findings document and practical recommendations you can act on straight away.</p>
   </div>
 
+  <!-- HOW IT CONNECTS -->
+  <section class="flow-section">
+    <h2 class="flow-h2">How it all connects.</h2>
+    <div class="flow-diagram">
+
+      <div class="flow-col flow-inputs">
+        <div class="flow-node">
+          <div class="flow-node-icon">🔍</div>
+          <div class="flow-node-label">SEO & AI Visibility</div>
+        </div>
+        <div class="flow-node">
+          <div class="flow-node-icon">✍️</div>
+          <div class="flow-node-label">Content & Positioning</div>
+        </div>
+        <div class="flow-node">
+          <div class="flow-node-icon">📢</div>
+          <div class="flow-node-label">PPC & Paid</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow-col">
+        <div class="flow-arrow-line"></div>
+        <svg class="flow-arrow-head" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="flow-hub">
+        <div class="flow-hub-eyebrow">The centre of it all</div>
+        <div class="flow-hub-title">Your Website</div>
+        <div class="flow-hub-divider"></div>
+        <div class="flow-hub-sub">Resonant messaging<br>& positioning</div>
+      </div>
+
+      <div class="flow-arrow-col">
+        <div class="flow-arrow-line"></div>
+        <svg class="flow-arrow-head" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="flow-col flow-outputs">
+        <div class="flow-node flow-node-out">
+          <div class="flow-node-icon">💬</div>
+          <div class="flow-node-label">More enquiries</div>
+        </div>
+        <div class="flow-node flow-node-out">
+          <div class="flow-node-icon">📈</div>
+          <div class="flow-node-label">Better conversion</div>
+        </div>
+        <div class="flow-node flow-node-out">
+          <div class="flow-node-icon">💰</div>
+          <div class="flow-node-label">Revenue growth</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
   <section class="services">
     <div class="services-head">
       <h2 class="services-h2">Here's what I offer.</h2>
@@ -29,6 +96,7 @@ const { services, cta, footer } = content;
     <div class="services-grid">
       {services.cards.map(card => (
         <div class={`service-card${card.featured ? ' featured' : ''}`}>
+          {card.featured && <div class="recommended-banner">Recommended</div>}
           <span class="service-badge">{card.badge}</span>
           <div class="service-name" set:html={card.name.replace('\n', '<br>')}></div>
           {card.price && <div class="service-price">{card.price}</div>}
@@ -56,7 +124,7 @@ const { services, cta, footer } = content;
     <h2 class="cta-h2">Apply for a no-obligation<br>website review.</h2>
     <p class="cta-sub">{cta.subheading}</p>
     <div class="cta-actions">
-      <button class="cta-btn">{cta.buttonText}</button>
+      <a href="/apply-for-website-review" class="cta-btn">{cta.buttonText}</a>
       <a href={`mailto:${cta.email}`} class="cta-link">{cta.email}</a>
     </div>
   </section>
@@ -98,6 +166,161 @@ const { services, cta, footer } = content;
 </Layout>
 
 <style>
+  /* Intro */
+  .pricing-intro {
+    padding: 56px 48px;
+    border-bottom: 0.5px solid #eee;
+    max-width: 680px;
+  }
+  .pi-body {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .pi-body:last-child { margin-bottom: 0; }
+
+  /* Flow diagram */
+  .flow-section {
+    background: #E1F5EE;
+    padding: 72px 48px;
+    border-bottom: 0.5px solid rgba(15,110,86,0.12);
+  }
+  .flow-h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #04342C;
+    margin-bottom: 52px;
+  }
+  .flow-diagram {
+    display: grid;
+    grid-template-columns: 1fr 48px 1.2fr 48px 1fr;
+    gap: 0;
+    align-items: center;
+    max-width: 900px;
+  }
+  .flow-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .flow-node {
+    background: #fff;
+    border: 0.5px solid rgba(15,110,86,0.25);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .flow-node-icon { font-size: 18px; line-height: 1; flex-shrink: 0; }
+  .flow-node-label {
+    font-size: 13px;
+    color: #04342C;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .flow-node-out {
+    background: #9FE1CB;
+    border-color: transparent;
+  }
+  .flow-arrow-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .flow-arrow-line {
+    width: 100%;
+    height: 0.5px;
+    background: #0F6E56;
+    opacity: 0.4;
+  }
+  .flow-arrow-head {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    position: absolute;
+    right: 0;
+  }
+  .flow-hub {
+    background: #04342C;
+    border-radius: 12px;
+    padding: 32px 28px;
+    text-align: center;
+    color: #fff;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .flow-hub-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9FE1CB;
+    margin-bottom: 10px;
+  }
+  .flow-hub-title {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .flow-hub-divider {
+    width: 32px;
+    height: 0.5px;
+    background: rgba(159,225,203,0.3);
+    margin: 16px auto;
+  }
+  .flow-hub-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* Service card overrides */
   .service-price { font-size: 24px; font-weight: 500; color: #04342C; margin-bottom: 2px; }
   .service-price-note { font-size: 11px; color: #aaa; margin-bottom: 14px; }
+  .service-cta-link {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #0F6E56;
+    border-bottom: 0.5px solid #0F6E56;
+    padding-bottom: 2px;
+  }
+
+  /* Featured / recommended card */
+  .service-card.featured {
+    background: #04342C;
+    border-color: transparent;
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card.featured .service-badge {
+    background: rgba(159,225,203,0.15);
+    color: #9FE1CB;
+  }
+  .service-card.featured .service-name { color: #fff; }
+  .service-card.featured .service-desc { color: rgba(255,255,255,0.65); }
+  .service-card.featured .service-cta-link {
+    color: #9FE1CB;
+    border-bottom-color: #9FE1CB;
+  }
+  .recommended-banner {
+    position: absolute;
+    top: 0; right: 0;
+    background: #9FE1CB;
+    color: #04342C;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-bottom-left-radius: 8px;
+  }
 </style>
