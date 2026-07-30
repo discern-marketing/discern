@@ -44,17 +44,17 @@ const footer = fallback.footer;
 
   <!-- CLIENT STRIP -->
   <div class="client-strip">
-    <span class="cs-label">Worked with</span>
+    <span class="cs-label">Who I've worked with</span>
     <div class="cs-divider"></div>
-    <div class="cs-names">
-      <span class="cs-name">Fujitsu</span>
-      <span class="cs-name">ROCKWOOL</span>
-      <span class="cs-name">CBI</span>
-      <span class="cs-name">Wales Millennium Centre</span>
-      <span class="cs-name">Bailey Caravans</span>
-      <span class="cs-name">SharpCloud</span>
-      <span class="cs-name">Stitch Money</span>
-      <span class="cs-name">nCino</span>
+    <div class="cs-logos">
+      <img class="cs-logo" src="https://logo.clearbit.com/fujitsu.com" alt="Fujitsu">
+      <img class="cs-logo" src="https://logo.clearbit.com/rockwool.com" alt="ROCKWOOL">
+      <img class="cs-logo" src="https://logo.clearbit.com/cbi.org.uk" alt="CBI">
+      <img class="cs-logo" src="https://logo.clearbit.com/wmc.org.uk" alt="Wales Millennium Centre">
+      <img class="cs-logo" src="https://logo.clearbit.com/baileyofbristol.co.uk" alt="Bailey Caravans">
+      <img class="cs-logo" src="https://logo.clearbit.com/sharpcloud.com" alt="SharpCloud">
+      <img class="cs-logo" src="https://logo.clearbit.com/stitch.money" alt="Stitch Money">
+      <img class="cs-logo" src="https://logo.clearbit.com/ncino.com" alt="nCino">
     </div>
   </div>
 
@@ -295,17 +295,18 @@ const footer = fallback.footer;
     background: rgba(255, 255, 255, 0.2);
     flex-shrink: 0;
   }
-  .cs-names {
+  .cs-logos {
     display: flex;
-    gap: 28px;
+    gap: 32px;
     flex-wrap: wrap;
     align-items: center;
   }
-  .cs-name {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 500;
-    white-space: nowrap;
+  .cs-logo {
+    height: 22px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.75;
+    object-fit: contain;
   }
 
   /* What I do */
